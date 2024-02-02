@@ -6,7 +6,7 @@
 /*   By: ffebbrar <ffebbrar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 19:15:37 by ffebbrar          #+#    #+#             */
-/*   Updated: 2024/01/20 20:16:02 by ffebbrar         ###   ########.fr       */
+/*   Updated: 2024/02/02 16:51:15 by ffebbrar         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,7 @@ char	*read_file(int fd, char *res)
 
 char	*get_next_line(int fd)
 {
-	static char		**buffer;
+	static char		*buffer[FOPEN_MAX];
 	char			*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0 || read(fd, 0, 0) < 0)
